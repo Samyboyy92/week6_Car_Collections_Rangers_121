@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+
+
+{% block content%}
+
+<div class="container">
+ 
+    <header class="row">
+        <div class="col-12 col-md-6" id="header-text">
+            <h2>Let's have some fun collecting Cars!</h2>
+            <h5>Create an amazing API tool for car collecting developers.</h5>
+            <div>
+                <button class="btn btn-primary">View Our Docs</button>
+                <button class="btn btn-primary">Join Our Slack</button>
+            </div>
+        </div>
+        <div class="col-12 col-md-6">
+            <img class="header-image" src="../../static/images/header-logo.jpg" alt="Hero Header Image">
+        </div>
+    </header>
+ 
+    <section class="row" id="features-section">
+        <div class="col-12 col-md-4">
+            <img src="../../static/images/car_api.png" class="img-fluid" alt="api image">
+            <h4>Dedicated API Routes</h4>
+            <p>
+                If you are a fan of using traditional API routes. We have those for you! 
+            </p>
+        </div>
+        <div class="col-12 col-md-4">
+            <img src="../../static/images/graphql.png" class="img-fluid" alt="graphql image">
+            <h4>GraphQL API Route</h4>
+            <p>
+                If you want ALL the data from one endpoint, we have that too!  
+            </p>
+        </div>
+        <div class="col-6 col-md-4">
+            <img src="../../static/images/database.png" class="img-fluid" alt="database image">
+            <h4>Backed by a PostgresSQL Database</h4>
+            <p>
+                All data will be persisted inside of a secure Postgres Database. 
+            </p>
+        </div>
+    </section>
+ 
+    <section class="row" id="feature-section2">
+        <div class="col-12 col-md-6">
+            <img src="../../static/images/footer-logo.jpg" class="img-fluid" alt="Car Image" id="Car-image">
+        </div>
+        <div class="col-12 col-md-6">
+            <h4>Talk with like minded car collectors</h4>
+            <p>
+                Talk with other devs around the world and collab
+                on projects with your data. Join our slack channel and give
+                a star to the project on Github!
+            </p>
+            <div>
+                <button class="btn btn-primary">View on Github</button>
+                <button class="btn btn-primary">Join our Slack Channel</button>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="row" id="footer">
+        <div class="col-2">
+            <img src="../../static/images/car-logo.jpg" class="img-fluid" alt="Car Collectors Logo" id="footer-logo">
+        </div>
+        <div class="col-3">
+            <div class="footer-text">
+                <h4>Social Media Pages</h4>
+                
+                <div class="col">
+                    <div id="circle">
+                        <i class="fab fa-facebook-f fa-fw" alt="Facebook" name="logo"></i>
+                    </div>
+                </div>
+                    
+                <div class="col">
+                    <div id="circle">
+                        <i class="fab fa-twitter fa-fw" alt="Twitter" name="logo"></i>
+                    </div>
+                </div>
+                
+                <div class="col">
+                    <div id="circle">
+                        <i class="fab fa-instagram" alt="Instagram" name="logo"></i>
+                    </div>
+                </div>                   
+            </div>
+        </div>        
+        </div>
+    </footer>
+</div>
+
+{% endblock content %}

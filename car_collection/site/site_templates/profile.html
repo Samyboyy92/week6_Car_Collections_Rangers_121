@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% with messages = get_flashed_messages(with_categories = true) %}
+    {% if messages  %}
+        {% for cat, msg in messages %}
+            {% if cat == 'auth-success' %}
+                <div class="container">
+                    {{ msg }}
+                    <button type="button" class="close" data-dismiss="alert" onclick="this.parentElement.style.display='none'">&times;</button>
+                </div>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+
+<header class="hero-section">
+    <h3 class="header-text">Welcome to your Car Collection! {{ current_user.username}}</h3>
+    <main class="container car_form">
+        <div class="row">
+            <aside class="col-12 col-md-6">
+                <h2>Upload your Car!</h2>
+                {% include 'carform.html' %}
+            </aside>
+        </div>
+    </main>
+</header>
+
+<div class="container">
+    <h3>Here are your profile details</h3>
+    <ul class="list-group">
+        <li class="list-group-item">Email: {{ current_user.email }}</li>
+        <li class="list-group-item">Token: {{ current_user.token }}</li>
+    </ul>
+
+    <div class="row">
+        {% for car in cars %}
+        <div class="card" style="width: 18rem;">
+            <img src="../../static/images/classic_mustang.jpg" class="card-img-top" alt="classic mustang">
+            <!-- <div class="card-body">
+            <h5 class="card-title">{{ car.make }}</h5>
+            <p class="card-text">{{ car.model }}</p>
+            </div> -->
+            <ul class="list-group list-group-flush">
+            <li class="list-group-item">{{ car.make }}</li>
+            <li class="list-group-item">{{ car.model }}</li>
+            <li class="list-group-item">{{ car.year }}</li>
+            <li class="list-group-item">{{ car.color }}</li>
+            <li class="list-group-item">{{ car.max_speed }}</li>
+            
+            </ul>
+            <div class="card-body">
+            <a href="#" class="card-link">Update Car</a>
+            <a href="#" class="card-link">Delete Car</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock content %}
